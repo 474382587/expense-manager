@@ -3,7 +3,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/expense-redux.js',//app.js
+  entry: './src/app.js',//app.js
   output: {
     path: path.join(__dirname, 'public'), //文件所在位置的 public folder
     filename: 'bundle.js'

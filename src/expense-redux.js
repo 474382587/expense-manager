@@ -20,6 +20,11 @@ const expensesReducerDefaultState = []
 
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
   switch (action.type) {
+    case 'ADD_EXPENSE':
+      return [
+        ...state,
+        action.expense
+      ]
     default:
       return state
   }
@@ -46,7 +51,7 @@ const store = createStore(
 store.subscribe(() => {
   console.log(store.getState())
 })
-
+store.dispatch(addExpense({description:'rent',amount:100}))
 const demoState = {
   expenses: [
     {
