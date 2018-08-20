@@ -1,11 +1,10 @@
 import expensesReducer from '../../reducers/expenses'
-import expenses from "../fixtures/expenses";
+import expenses from '../fixtures/expenses'
 
-test('should set default state', ()=>{
-  const state = expensesReducer(undefined, {type: '@@INIT'})
+test('should set default state', () => {
+  const state = expensesReducer(undefined, { type: '@@INIT' })
   expect(state).toEqual([])
 })
-
 
 test('should remove by id', () => {
   const action = {
@@ -13,7 +12,7 @@ test('should remove by id', () => {
     id: expenses[1].id
   }
   const state = expensesReducer(expenses, action)
-  expect(state).toEqual([expenses[0],expenses[2]])
+  expect(state).toEqual([expenses[0], expenses[2]])
 })
 
 test('should not remove by id if id not found', () => {
@@ -33,7 +32,7 @@ test('should add an expense', () => {
     createdAt: 20000,
     amount: 29500
   }
-  const action ={
+  const action = {
     type: 'ADD_EXPENSE',
     expense
   }
@@ -50,7 +49,7 @@ test('should edit expense', () => {
       amount
     }
   }
-  const state = expensesReducer(expenses,action)
+  const state = expensesReducer(expenses, action)
   expect(state[1].amount).toEqual(amount)
 })
 
@@ -63,6 +62,6 @@ test('should not edit expense if not found', () => {
       amount
     }
   }
-  const state = expensesReducer(expenses,action)
+  const state = expensesReducer(expenses, action)
   expect(state).toEqual(expenses)
 })
