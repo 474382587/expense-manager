@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development",
-    "test": "jest"
+    "dev": "webpack-dev-server --open --mode development",
+    "start":"node server/server.js",
+    "test": "jest",
+    "heroku-postbuild":"npm run build"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "express": "^4.16.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "moment": "^2.22.2",
     "node-sass": "^4.9.2",
