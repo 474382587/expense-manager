@@ -6,9 +6,9 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --open --mode development",
-    "start":"node server/server.js",
+    "start": "node server/server.js",
     "test": "jest",
-    "heroku-postbuild":"npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
